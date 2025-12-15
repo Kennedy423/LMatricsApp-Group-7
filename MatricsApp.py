@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
-import cv2
 from io import BytesIO
 from PIL import Image
 import io
@@ -200,3 +199,4 @@ elif menu == "Team Members":
         if photo:
             st.image(photo, width=200)
         st.write(f"**Contribution:** {role}")
+
