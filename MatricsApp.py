@@ -184,19 +184,33 @@ elif menu == "Image Processing":
 
 # =================== TEAM MEMBERS =====================
 
-elif menu == "Team Members":
+lif menu == "Team Members":
     st.title("Team Members – Group 7")
 
-    members = {
-        "Ahmad Galan Ali": "Implementasi matrix transformation membuat aplikasi dan web coding stramlit",
-        "Kennedy Ibrahim Ubaldus": "Image filtering & convolution",
-        "Raffi Ardiansyah Zulin": "documentation and report"
-    }
+    members = [
+        {
+            "name": "Ahmad Galan Ali",
+            "role": "Implementasi matrix transformation dan web app Streamlit",
+            "photo": "images/ahmad.jpg"
+        },
+        {
+            "name": "Kennedy Ibrahim Ubaldus",
+            "role": "Image filtering & convolution",
+            "photo": "images/kennedy.jpg"
+        },
+        {
+            "name": "Raffi Ardiansyah Zulin",
+            "role": "Documentation and report",
+            "photo": "images/raffi.jpg"
+        }
+    ]
 
-    for name, role in members.items():
-        st.subheader(name)
-        photo = st.file_uploader(f"Upload photo - {name}", type=["jpg", "png"], key=name)
-        if photo:
-            st.image(photo, width=200)
-        st.write(f"**Contribution:** {role}")
+    cols = st.columns(3)
+
+    for col, member in zip(cols, members):
+        with col:
+            st.image(member["photo"], width=200)
+            st.subheader(member["name"])
+            st.write(f"**Contribution:** {member['role']}")
+
 
