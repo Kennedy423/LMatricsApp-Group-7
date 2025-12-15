@@ -184,7 +184,7 @@ elif menu == "Image Processing":
 
 # =================== TEAM MEMBERS =====================
 
-lif menu == "Team Members":
+elif menu == "Team Members":
     st.title("Team Members – Group 7")
 
     members = [
@@ -212,5 +212,6 @@ lif menu == "Team Members":
             st.image(member["photo"], width=200)
             st.subheader(member["name"])
             st.write(f"**Contribution:** {member['role']}")
+
 
 
